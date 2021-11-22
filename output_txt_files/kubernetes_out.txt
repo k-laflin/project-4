@@ -1,0 +1,30 @@
+## this is the output from the main terminal which is running the kubernetes container ##
+Error from server (AlreadyExists): pods "project3" already exists
+NAME       READY   STATUS    RESTARTS   AGE
+project3   1/1     Running   0          38s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+
+## This is the results of the kubeneretes logs. Due to the version of bash I am using, the application logs are stored in a container log I can view by running the kubectl logs <container> command. ##
+$ kubectl logs project3
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 161-662-014
+[2021-11-22 15:28:05,340] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2021-11-22 15:28:05,350] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2021-11-22 15:28:05,357] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2021-11-22 15:28:05,360] INFO in app: Prediction: 
+[20.35373177134412]
+127.0.0.1 - - [22/Nov/2021 15:28:05] "POST /predict HTTP/1.1" 200 -
