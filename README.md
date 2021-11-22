@@ -9,10 +9,11 @@ This project deploys a machine learning python application which can predict hou
 To run using docker: \
 `./run_docker.sh` \
 To run using kubernetes: \
-`./upload_docker.sh` \ 
+`./upload_docker.sh`\
 `minikube start` \
 `./run_kubernetes.sh` \
-When running this for the first time, you might get an error because the status is still pending. When `kubectl get pod project4` returns a Running status, then re-run the following: \
+When running this for the first time, you might get an error because the status is still pending. \
+When `kubectl get pod project4` returns a Running status, then re-run the following: \
 `kubectl port-forward project4 8000:80`
 
 You can then test the app by requesting a prediction in a new terminal:
