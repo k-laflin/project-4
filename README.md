@@ -6,10 +6,15 @@ CircleCI status:
 This project deploys a machine learning python application which can predict housing prices in Boston. It can be configured to deploy in a Kubernetes container, using a CircleCI pipeline. 
 
 ## How to run the app:
+Set up the virtual environment:\
+`make setup`\
+`make source`\
+`make install`
+
 To run using docker: \
-`./run_docker.sh` \
+`./run_docker.sh` 
+
 To run using kubernetes: \
-`./upload_docker.sh`\
 `minikube start` \
 `./run_kubernetes.sh` \
 When running this for the first time, you might get an error because the status is still pending. \
